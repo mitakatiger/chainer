@@ -1,5 +1,7 @@
 language: python
 
+cache: pip
+
 matrix:
   include:
     - os: linux
@@ -56,10 +58,6 @@ script:
   - PYTHONWARNINGS='module::DeprecationWarning' nosetests -a '!gpu' --with-doctest chainer_tests
 
 sudo: false
-
-cache:
-  directories:
-    - $HOME/.cache/pip
 
 addons:
   apt:
