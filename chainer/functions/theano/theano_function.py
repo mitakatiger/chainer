@@ -119,7 +119,7 @@ def _make_theano_array(x):
 
 def _cupy_to_theano_array(x):
     if six.PY2:
-        ptr = long(x.data.ptr)
+        ptr = long(x.data.ptr)  # NOQA
     else:
         ptr = int(x.data.ptr)
     strides = [s / 4 for s in x.strides]
